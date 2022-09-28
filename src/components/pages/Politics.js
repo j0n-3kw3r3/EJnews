@@ -13,8 +13,9 @@ export default function Politics() {
 
     useEffect(() => {
         return () => {
-            const key = 'pub_1164815d738c9f7b5072ea44c39601c16bbce'
-            const url = `https://newsdata.io/api/1/news?apikey=${key}&language=en&category=business,politics,sports,technology,top`
+            const random = Math.floor(Math.random() * 10)
+            const key = 'pub_117291d3a603910ccf6f2f2e86ea96214e17e'
+            const url = `https://newsdata.io/api/1/news?apikey=${key}&language=en&category=politics&page=${random}`
             axios(url).then(data => {
                 setData(data.data);
                 setIsLoading(true)
@@ -34,8 +35,8 @@ export default function Politics() {
     return (
         isLoading ?
             <div className="py-[2rem]">
-                <h1 className=" text-[2.5rem] pb-[2rem] font-bold font-header capitalize ">Politics</h1>
-                <div className=" md:grid grid-cols-3 gap-8 ">
+                <h1 className=" text-[2.5rem] pb-[2rem] font-bold font-header capitalize header ">Politics</h1>
+                <div className=" lg:grid grid-cols-3 gap-8 ">
 
                     {
                         politics && politics

@@ -53,7 +53,7 @@ export default function NavBar() {
 
             <div className="flex font-semibold">
 
-                <img src="./asset/logo.png" alt="" className=" h-[1.4rem] mr-[.5rem]  " /><Link to='/' className="font-header text-[1.2rem] " onClick={() => setstate(!state)} >EJ.news</Link>
+                <img src="./asset/logo.png" alt="" className=" h-[1.4rem] mr-[.5rem]  " /><Link to='/' className="font-header header text-[1.2rem] " onClick={() => setstate(!state)} >EJ.news</Link>
             </div>
 
             {/* <div className="relative w-[20%] ">
@@ -63,8 +63,8 @@ export default function NavBar() {
         </div>
         <div className="flex justify-between py-[rem] font-semibold relative text-[.75rem] ">
 
-            <div className="   py-[1.2rem] capitalize " >{date}</div>
-            <Link to='/' className=" text-center text-[3rem] font-[900] font-header md:absolute top 0 left-0 w-full " onClick={() => setstate(!state)}  >Todays News</Link>
+            <div className="   py-[1.2rem] capitalize  " >{date}</div>
+            <Link to='/' className=" text-center text-[3rem] font-[900] font-header header md:absolute top 0 left-0 w-full " onClick={() => setstate(!state)}  >Todays News</Link>
             <div className="    py-[1.3rem]" >{weather}℃</div>
 
         </div>

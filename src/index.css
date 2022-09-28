@@ -5,12 +5,17 @@
 
 body {
   margin: 0;
-  /* font-family: 'Lato-Regular', ; */
-  /* background: linear-gradient(#CCB380, #DECCA2, #E2D5AF, #E6DEBD, #CCB380);
-   */
-   background-image: url('../public/background.png');
+   background-image: url('../public/background-.png');
    background-repeat: no-repeat;
    background-size: cover;
    background-attachment: fixed;
 }
 
+@font-face {
+  font-family: header ;
+  src: url('../public/Gabriola.woff');
+}
+
+.header{
+  font-family: header;
+}

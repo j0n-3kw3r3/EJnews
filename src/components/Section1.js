@@ -5,7 +5,7 @@ export default function Section1({ props, data, business }) {
 
     return (
         <div className="py-[2rem]">
-            <h1 className=" text-[2.5rem] font-bold font-header capitalize ">{props}</h1>
+            <h1 className=" text-[2.5rem] font-bold font-header header capitalize ">{props}</h1>
 
             <div className=" md:flex justify-evenly gap-[1.5rem] ">
 

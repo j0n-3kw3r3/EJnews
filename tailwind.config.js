@@ -8,8 +8,8 @@ module.exports = {
         'body': 'Segoe UI',
       },
       colors: {
-        'border':'#00000041',
-    },
+        'border': '#00000041',
+      },
     },
   },
   plugins: [],

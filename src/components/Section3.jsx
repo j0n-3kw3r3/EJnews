@@ -3,7 +3,7 @@ export default function Section3({ props, data, tech }) {
 
   return (<div className="py-[2rem]">
 
-    <h1 className=" text-[2.5rem] font-bold font-header capitalize ">{props}</h1>
+    <h1 className=" text-[2.5rem] font-bold font-header capitalize header ">{props}</h1>
     <div className=" flex justify-between gap-[1.5rem] ">
 
 
