@@ -1,5 +1,4 @@
-
-export const json ={
+{
     "status": "success",
     "totalResults": 199,
     "results": [

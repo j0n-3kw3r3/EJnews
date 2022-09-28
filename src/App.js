@@ -20,12 +20,11 @@ import axios from "axios";
 
 
 function App() {
-  const [data, setData] = useState();
+  const [data, setData] = useState('');
   const [active, setActive] = useState('');
 
 
   const [isLoading, setIsLoading] = useState(false);
-  const random = Math.floor(Math.random() * 128, 641)
 
 
   useEffect(() => {
@@ -35,15 +34,17 @@ function App() {
 
     };
     getLo()
-  },);
+  });
 
 
 
   useEffect(() => {
-    return () => {
-      const key = 'pub_1164815d738c9f7b5072ea44c39601c16bbce'
-      const url = `https://newsdata.io/api/1/news?apikey=${key}&language=en&category=business,politics,sports,technology,top&page=${random}`
-      axios(url).then(data => {
+    const getNews = async () => {
+      const random = Math.floor(Math.random() * 128, 641)
+      const key = 'pub_117291d3a603910ccf6f2f2e86ea96214e17e'
+      const url = `https://newsdata.io/api/1/news?apikey=${key}&language=en&category=business,politics,sports,technology,top&page=${random}`;
+
+      return await axios(url).then(data => {
         setData(data.data);
         setIsLoading(true)
       })
@@ -52,6 +53,8 @@ function App() {
           console.log(error);
         });
     };
+    getNews()
+
   }, []);
 
 
@@ -99,98 +102,32 @@ function App() {
           <div className=" mb-[3rem] flex  justify-evenly w-[80%]  mx-auto ">
             <a
               href='https://twitter.com/John_E_Ekwere'
-              whileHover={{ scale: 1.2 }}
-              whileTap={{
-                scale: 1,
-                color: '#00abee9b'
-              }}
-              initial={{
-                color: '#00acee'
-              }}
-              transition={{
-                duration: 0.1
-              }}
             >
               <FaTwitter size={20} className=' hover:scale-[120%] transition ease-in-out duration-500 cursor-pointer' />
             </a>
             <a
               href='https://github.com/jon-3kw3r3'
-              whileHover={{ scale: 1.2 }}
-              whileTap={{
-                scale: 1,
-                color: '#ffffff92'
-              }}
-              initial={{
-                color: '#ffffff'
-              }}
-              transition={{
-                duration: 0.1
-              }}
             >
               <VscGithub size={20} className='  hover:scale-[120%] transition ease-in-out duration-500 cursor-pointer  ' />
             </a>
             <a
-              href='https://linkedin.com/in/john-ebong-118653240' whileHover={{ scale: 1.2 }}
-              whileTap={{
-                scale: 1,
-                color: '#0076b59e'
-              }}
-              initial={{
-                color: '#0077b5'
-              }}
-              transition={{
-                duration: 0.1
-              }}
+              href='https://linkedin.com/in/john-ebong-118653240' 
             >
               <FaLinkedinIn size={20} className=' hover:scale-[120%] transition ease-in-out duration-500  cursor-pointer ' />
             </a>
 
             <a
               href='https://wa.me/+2348109156506'
-              whileHover={{ scale: 1.2 }}
-              whileTap={{
-                scale: 1,
-                color: '#25d36590'
-              }}
-              initial={{
-                color: '#25D366'
-              }}
-              transition={{
-                duration: 0.1
-              }}
             >
               <FaWhatsapp size={20} className=' hover:scale-[120%] transition ease-in-out duration-500  cursor-pointer ' />
             </a>
             <a
               href='https://t.me/+2348109156506'
-              whileHover={{ scale: 1.2 }}
-              whileTap={{
-                scale: 1,
-                color: '#0088cc8c'
-              }}
-              initial={{
-                color: '#0088cc'
-              }}
-              transition={{
-                duration: 0.1
-              }}
             >
               <FaTelegramPlane size={20} className=' hover:scale-[120%] transition ease-in-out duration-500  cursor-pointer ' />
             </a>
             <a
               href='https://discordapp.com/users/John-E-E#9435'
-              whileHover={{ scale: 1.2 }}
-              whileTap={{
-                scale: 1,
-                color: '#7289da91',
-
-              }}
-              initial={{
-                color: '#7289DA'
-              }}
-              transition={{
-                duration: 0.1
-              }}
             >
               <FaDiscord size={20} className=' hover:scale-[120%] transition ease-in-out duration-500 cursor-pointer' />
             </a>
