@@ -18,7 +18,7 @@ export default function Technology() {
         const key = 'pub_117291d3a603910ccf6f2f2e86ea96214e17e'
         const url = `https://newsdata.io/api/1/news?apikey=${key}&language=en&category=technology&page=${random}`
         axios(url).then(data => {
-          setData(data.data);
+          setData(data.data.results);
           setIsLoading(true)
           console.log(data);
         })
@@ -29,11 +29,7 @@ export default function Technology() {
       };
     }, []);
 
-    const technology = data?.results.filter((value) => {
-        const val = value.category[0].includes('technology')
-        return val
-    }
-    )
+  
   return (
 
       isLoading ?
@@ -42,8 +38,8 @@ export default function Technology() {
           <div className=" lg:grid grid-cols-3 gap-8 ">
               
           {
-                    technology && technology
-                        .slice(0, 20).map((data, id) => {
+                    data && data
+                        .map((data, id) => {
                             return (
                                 <div className=" mb-[4rem] " key={id}>
                                     {data.image_url &&

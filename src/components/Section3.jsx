@@ -4,17 +4,17 @@ export default function Section3({ props, data, tech }) {
   return (<div className="py-[2rem]">
 
     <h1 className=" text-[2.5rem] font-bold font-header capitalize header ">{props}</h1>
-    <div className=" flex justify-between gap-[1.5rem] ">
+    <div className=" md:flex md:justify-between md:gap-[1.5rem] w-full ">
 
 
       {
         tech && tech
           .slice(1, 4).map((data, id) => {
             return (
-              <div className=" pb-[1rem]">
+              <div className=" pb-[1rem] w-full">
                 {data.image_url &&
-                  <img src={data.image_url} alt="" className=" w-[100%] h-[10rem] mb-[.5rem] " />}
-                <h1 className="font-semibold">{data.title} </h1>
+                  <img src={data.image_url} alt="" className=" w-[100%] md:h-[10rem] mb-[.5rem] " />}
+                <h1 className="font-semibold w-full">{data.title} </h1>
                 <a href={data.link} className=" font-semibold">Read more...</a>
 
 

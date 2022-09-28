@@ -16,7 +16,7 @@ export default function Sport() {
             const key = 'pub_117291d3a603910ccf6f2f2e86ea96214e17e'
             const url = `https://newsdata.io/api/1/news?apikey=${key}&language=en&category=sports&page=${random}`
             axios(url).then(data => {
-                setData(data.data);
+                setData(data.data.results);
                 setIsLoading(true)
                 console.log(data);
             })
@@ -26,11 +26,7 @@ export default function Sport() {
                 });
         };
     }, []);
-    const sport = data?.results.filter((value) => {
-        const val = value.category[0].includes('sport')
-        return val
-    }
-    )
+   
     return (
 
         isLoading ?
@@ -39,8 +35,8 @@ export default function Sport() {
                 <div className=" lg:grid grid-cols-3 gap-8 ">
 
                     {
-                        sport && sport
-                            .slice(0, 20).map((data, id) => {
+                        data && data
+                          .map((data, id) => {
                                 return (
                                     <div className=" mb-[4rem] " key={id}>
                                         {data.image_url &&
