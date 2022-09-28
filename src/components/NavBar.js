@@ -30,7 +30,7 @@ export default function NavBar() {
             });
         };
         getWeather()
-    }, []);
+    }, );
     useEffect(() => {
         return () => {
             const d = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
