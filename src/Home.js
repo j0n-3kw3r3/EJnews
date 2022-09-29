@@ -6,21 +6,21 @@ import SideBar from "./components/SideBar";
 
 export function Home({ data }) {
   //technology
-  const tech = data?.results.filter((value) => {
+  const tech = data.results.filter((value) => {
     const val = value.category[0].includes('technology')
     return val
   }
   )
 
       // Business
-  const business = data?.results.filter((value) => {
+  const business = data.results.filter((value) => {
     const val = value.category[0].includes('business')
     return val
 
   }
     )
       //entertainment
-      const ent = data?.results.filter((value) => {
+      const ent = data.results.filter((value) => {
         const val = value.category[0].includes('entertainment')
         return val
     }

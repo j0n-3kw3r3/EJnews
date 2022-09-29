@@ -4,32 +4,34 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 
+const key = 'pub_117291d3a603910ccf6f2f2e86ea96214e17e'
+const url = `https://newsdata.io/api/1/news?apikey=${key}&language=en&category=politics`
 export default function Politics() {
 
     const [data, setData] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-
-
-
+    const [isLoading, setIsLoading] = useState(true);
+  
+    const getData = async () => {
+      try {
+        const response = await axios(url);
+        if (response.status === 200 || response.status === 201) {
+          setData(response.data.results);
+          setIsLoading(false)
+        }
+      } catch (e) {
+        setIsLoading(true)
+        console.log(e)
+      }
+    }
+  
+  
+  
     useEffect(() => {
-        return () => {
-            // const random = Math.floor(Math.random() * 10)
-            const key = 'pub_117291d3a603910ccf6f2f2e86ea96214e17e'
-            const url = `https://newsdata.io/api/1/news?apikey=${key}&language=en&category=politics`
-            axios(url).then(data => {
-                setData(data.data.results);
-                setIsLoading(true)
-                console.log(data.data.results);
-            })
-                .catch(function (error) {
-                    // handle error
-                    console.log(error);
-                });
-        };
+      getData()
     }, []);
-
-    return (
-        isLoading ?
+  
+          return (
+        !isLoading ?
             <div className="py-[2rem]">
                 <h1 className=" text-[2.5rem] pb-[2rem] font-bold font-header capitalize header ">Politics</h1>
                 <div className=" lg:grid grid-cols-3 gap-8 ">

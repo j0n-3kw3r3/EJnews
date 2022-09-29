@@ -14,12 +14,14 @@ import { Footer } from "./Footer";
 
 
 
+const key = 'pub_117291d3a603910ccf6f2f2e86ea96214e17e'
+const url = `https://newsdata.io/api/1/news?apikey=${key}&language=en&category=business,politics,sports,technology,top`;
 function App() {
   const [data, setData] = useState('');
   const [active, setActive] = useState('');
 
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
 
   useEffect(() => {
@@ -33,24 +35,26 @@ function App() {
 
 
 
+
+  const getData = async () => {
+    try {
+      const response = await axios(url);
+      if (response.status === 200 || response.status === 201) {
+        setData(response.data);
+        setIsLoading(false)
+      }
+    } catch (e) {
+      setIsLoading(true)
+      console.log(e)
+    }
+  }
+
+
+
   useEffect(() => {
-    const getNews = async () => {
-      // const random = Math.floor(Math.random() * 128, 641)
-      const key = 'pub_117291d3a603910ccf6f2f2e86ea96214e17e'
-      const url = `https://newsdata.io/api/1/news?apikey=${key}&language=en&category=business,politics,sports,technology,top`;
-
-      return await axios(url).then(data => {
-        setData(data.data);
-        setIsLoading(true)
-      })
-        .catch(function (error) {
-          // handle error
-          console.log(error);
-        });
-    };
-    getNews()
-
+    getData()
   }, []);
+
 
 
   return (
@@ -59,7 +63,7 @@ function App() {
       <div className=" max-w-7xl w-[90%] mx-auto font-body ">
         <NavBar />
         {
-          isLoading ?
+          !isLoading ?
             <Routes>
               <Route path="/" element={<Home data={data} />} />
               <Route path="/business" element={<Business />} />
