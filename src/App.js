@@ -69,7 +69,7 @@ function App() {
               <Route path="/technology" element={<Technology />} />
             </Routes>
             :
-            <h1 className=" text-center font-header my-[9rem] text-[4rem]">Loading...</h1>
+            <h1 className=" text-center font-header my-[9rem] text-[2rem]">Loading...</h1>
         }
 
         <Footer active={active} />

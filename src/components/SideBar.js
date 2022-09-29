@@ -16,7 +16,7 @@ export default function SideBar({ data }) {
                             {data.image_url &&
                                 <img src={data.image_url} alt="" srcSet="" className=" h-[12rem] w-full" />}
                             <div className={data.image_url ? "text-center absolute bottom-0 bg-border p-[.5rem] text-white font-semibold text-[.75rem] " : ' font-semibold mb-[1rem]'}>{data.title}</div>
-                            <a href={data.link} className=" font-semibold">Read more...</a>
+                            <a href={data.link} className=" font-semibold  ">Read more...</a>
                         </div>
                     )
                 })

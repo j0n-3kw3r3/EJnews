@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 export default function Politics() {
 
-    const [data, setData] = useState();
+    const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
 
@@ -19,7 +19,7 @@ export default function Politics() {
             axios(url).then(data => {
                 setData(data.data.results);
                 setIsLoading(true)
-                console.log(data);
+                console.log(data.data.results);
             })
                 .catch(function (error) {
                     // handle error
@@ -54,6 +54,6 @@ export default function Politics() {
 
             </div>
             :
-            <h1 className=" text-center font-header my-[9rem] text-[4rem]">Loading...</h1>
+            <h1 className=" text-center font-header my-[9rem] text-[2rem]">Loading...</h1>
     );
 }
