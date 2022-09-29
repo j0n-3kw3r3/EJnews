@@ -13,7 +13,7 @@ export default function Business() {
 
   useEffect(() => {
     return () => {
-      const random = Math.floor(Math.random() * 10)
+      // const random = Math.floor(Math.random() * 10)
 
       const key = 'pub_117291d3a603910ccf6f2f2e86ea96214e17e'
       const url = `https://newsdata.io/api/1/news?apikey=${key}&language=en&category=business`
