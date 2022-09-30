@@ -69,11 +69,16 @@ export default function NavBar() {
 
         </div>
         <div>
-            <ul className=" flex justify-evenly text-[.85rem] border-t border-border pt-3 ">
+            <ul className=" md:flex grid grid-cols-4  justify-evenly text-[.85rem] border-t border-border pt-3 ">
+                <Link to='/world' className={active === 'world' ? " cursor-pointer font-semibold hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold" : 'font-normal hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold'} onClick={() => setstate(!state)} >World</Link>
                 <Link to='/business' className={active === 'business' ? " cursor-pointer font-semibold hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold" : 'font-normal hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold'} onClick={() => setstate(!state)} >Business</Link>
+                <Link to='/entertainment' className={active === 'entertainment' ? " cursor-pointer font-semibold hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold" : 'font-normal hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold'} onClick={() => setstate(!state)} >Entertainment</Link>
+                <Link to='/environment' className={active === 'environment' ? " cursor-pointer font-semibold hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold" : 'font-normal hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold'} onClick={() => setstate(!state)} >Environment</Link>
+                <Link to='/health' className={active === 'health' ? " cursor-pointer font-semibold hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold" : 'font-normal hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold'} onClick={() => setstate(!state)} >Health</Link>
 
                 <Link to='/politics' className={active === 'politics' ? " hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold cursor-pointer font-semibold" : '  hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold font-normal'} onClick={() => setstate(!state)} >Politics</Link>
                 <Link to='/sport' className={active === 'sport' ? " cursor-pointer font-semibold hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold " : 'font-normal  hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold '} onClick={() => setstate(!state)} >Sport</Link>
+                <Link to='/science' className={active === 'science' ? " cursor-pointer font-semibold hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold " : 'font-normal  hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold '} onClick={() => setstate(!state)} >Science</Link>
                 <Link to='/technology' className={active === 'technology' ? " cursor-pointer font-semibold hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold" : 'font-normal hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold'} onClick={() => setstate(!state)} >Technology</Link>
             </ul>
         </div>

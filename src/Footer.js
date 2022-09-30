@@ -21,10 +21,15 @@ export function Footer({ active }) {
             <div className="w-[50%]  ">
 
                 <ul className=" flex flex-col  justify-evenly text-[.85rem] text-center gap-3 mb-[3rem] pt-3 ">
+                    <Link to='/world' className={active === 'world' ? " cursor-pointer font-semibold " : 'font-normal'}>World</Link>
                     <Link to='/business' className={active === 'business' ? " cursor-pointer font-semibold " : 'font-normal'}>Business</Link>
 
+                    <Link to='/entertainment' className={active === 'entertainment' ? " cursor-pointer font-semibold" : 'font-normal'}>Entertainment</Link>
+                    <Link to='/environment' className={active === 'environment' ? " cursor-pointer font-semibold" : 'font-normal'}>Environment</Link>
+                    <Link to='/health' className={active === 'health' ? " cursor-pointer font-semibold" : 'font-normal'}>Health</Link>
                     <Link to='/politics' className={active === 'politics' ? " cursor-pointer font-semibold" : 'font-normal'}>Politics</Link>
                     <Link to='/sport' className={active === 'sport' ? " cursor-pointer font-semibold " : 'font-normal'}>Sport</Link>
+                    <Link to='/science' className={active === 'science' ? " cursor-pointer font-semibold" : 'font-normal'}>Science</Link>
                     <Link to='/technology' className={active === 'technology' ? " cursor-pointer font-semibold" : 'font-normal'}>Technology</Link>
                 </ul>
 

@@ -2,7 +2,13 @@ import NavBar from "./components/NavBar";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { Home } from "./Home";
+
+import Science from "./components/pages/Science";
+import Health from "./components/pages/Health";
+import Entertainment from "./components/pages/Entertainment";
+import Environment from "./components/pages/Environment";
 import Business from "./components/pages/Business";
+import World from "./components/pages/World";
 import Politics from "./components/pages/Politics";
 import Sport from "./components/pages/Sport";
 import Technology from "./components/pages/Technology";
@@ -67,9 +73,13 @@ function App() {
             <Routes>
               <Route path="/" element={<Home data={data} />} />
               <Route path="/business" element={<Business />} />
-
+              <Route path="/world" element={<World />} />
               <Route path="/politics" element={<Politics />} />
               <Route path="/sport" element={<Sport />} />
+              <Route path="/science" element={<Science />} />
+              <Route path="/environment" element={<Environment />} />
+              <Route path="/entertainment" element={<Entertainment />} />
+              <Route path="/health" element={<Health />} />
               <Route path="/technology" element={<Technology />} />
             </Routes>
             :

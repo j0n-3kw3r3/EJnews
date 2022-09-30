@@ -19,7 +19,7 @@ export default function Section1({ props, data, business }) {
                             return (
                                 <div className="md:w-[30%]" key={id}>
                                     {data.image_url &&
-                                        <img src={data.image_url} alt="" className=" w-[100%] h-[10rem] mb-[.5rem] " />}
+                                        <img src={data.image_url} alt="" className=" w-[100%] h-[10rem] mb-[.5rem] object-cover shadow-lg " />}
                                     <div className="flex text-[.75rem] justify-between">
                                         <h1 className="font-semibold">by {data.creator}</h1>
                                         <h1 className="">{data.pubDate}</h1>

@@ -34,23 +34,23 @@ export default function Politics() {
         !isLoading ?
             <div className="py-[2rem]">
                 <h1 className=" text-[2.5rem] pb-[2rem] font-bold font-header capitalize header ">Politics</h1>
-                <div className=" lg:grid grid-cols-3 gap-8 ">
+                <div className=" lg:grid grid-cols-2 gap-8 ">
 
                     {
                         data && data
                             .map((data, id) => {
                                 return (
                                     <div className=" mb-[4rem] " key={id}>
-                                        {data.image_url &&
-                                            <img src={data.image_url} alt="" className=" w-full h-[20rem] " />}
-                                        <h1 className="font-semibold">{data.title}</h1>
-                                        <p>{data.description}</p>
-                                        <button className="px-5 py-2 mt-[1rem] bg-black text-white"><a href={data.link} className=" font-semibold ">Read more...</a></button>
-
-
+                                      {data.image_url &&
+                                        <img src={data.image_url} alt="" className=" w-full h-[20rem] object-cover rounded shadow-xl border border-border  " />}
+                                      <h1 className="font-semibold my-[1rem] text-[1.3rem]  ">{data.title}</h1>
+                                      <p className=' font-serif '>{data.content || data.description}</p>
+                                      <button className="px-5 py-2 mt-[1rem] bg-black text-white rounded"><a href={data.link} className=" font-semibold  ">Read more...</a></button>
+                  
+                  
                                     </div>
-                                )
-                            })
+                                  )
+                                              })
                     }
                 </div>
 

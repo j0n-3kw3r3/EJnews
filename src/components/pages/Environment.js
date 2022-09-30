@@ -5,8 +5,8 @@ import { useEffect } from 'react';
 
 
 const key = 'pub_117291d3a603910ccf6f2f2e86ea96214e17e'
-const url = `https://newsdata.io/api/1/news?apikey=${key}&language=en&category=sports`
-export default function Sport() {
+const url = `https://newsdata.io/api/1/news?apikey=${key}&language=en&category=environment`
+export default function Environmnent() {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
   
@@ -34,7 +34,7 @@ export default function Sport() {
 
         !isLoading ?
             <div className="py-[2rem]">
-                <h1 className=" text-[2.5rem] pb-[2rem] font-bold font-header capitalize header ">Sport</h1>
+                <h1 className=" text-[2.5rem] pb-[2rem] font-bold font-header capitalize header ">Environmnent</h1>
                 <div className=" lg:grid grid-cols-2 gap-8 ">
 
                     {
