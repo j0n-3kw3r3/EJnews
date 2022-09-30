@@ -69,7 +69,7 @@ export default function NavBar() {
 
         </div>
         <div>
-            <ul className=" md:flex grid grid-cols-4  justify-evenly text-[.85rem] border-t border-border pt-3 ">
+            <ul className=" md:flex grid grid-cols-3  justify-evenly text-[.85rem] border-t border-border pt-3 ">
                 <Link to='/world' className={active === 'world' ? " cursor-pointer font-semibold hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold" : 'font-normal hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold'} onClick={() => setstate(!state)} >World</Link>
                 <Link to='/business' className={active === 'business' ? " cursor-pointer font-semibold hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold" : 'font-normal hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold'} onClick={() => setstate(!state)} >Business</Link>
                 <Link to='/entertainment' className={active === 'entertainment' ? " cursor-pointer font-semibold hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold" : 'font-normal hover:scale-[120%] transition ease-in-out duration-500 hover:font-semibold'} onClick={() => setstate(!state)} >Entertainment</Link>
