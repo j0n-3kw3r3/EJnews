@@ -2,14 +2,18 @@ import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { Display } from './Display';
 
 
-const key = 'pub_117291d3a603910ccf6f2f2e86ea96214e17e'
+const key = 'pub_1164815d738c9f7b5072ea44c39601c16bbce'
 const url = `https://newsdata.io/api/1/news?apikey=${key}&language=en&category=business`
 export default function Business() {
 
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [displayData, setDisplayData] = useState([]);
+  const [readMore, setReadMore] = useState(false);
+
 
   const getData = async () => {
     try {
@@ -31,7 +35,14 @@ export default function Business() {
     getData()
   }, []);
 
-  
+
+  const getId = (id) => {
+    console.log(id)
+    setDisplayData(data[id])
+    setReadMore(!readMore)
+  }
+
+
   return (
     !isLoading ?
       <div className="py-[2rem]">
@@ -40,14 +51,16 @@ export default function Business() {
 
           {
             data && data
-             .map((data, id) => {
+              .map((data, id) => {
                 return (
                   <div className=" mb-[4rem] " key={id}>
                     {data.image_url &&
                       <img src={data.image_url} alt="" className=" w-full h-[20rem] object-cover rounded shadow-xl border border-border  " />}
                     <h1 className="font-semibold my-[1rem] text-[1.3rem]  ">{data.title}</h1>
-                    <p className=' font-serif '>{data.content || data.description}</p>
-                    <button className="px-5 py-2 mt-[1rem] bg-black text-white rounded"><a href={data.link} className=" font-semibold  ">Read more...</a></button>
+                    <p className=' font-serif '>{data.description}</p>
+                    <button className="px-5 py-2 mt-[1rem]  border border-border rounded" onClick={() => getId(id)}>
+                      Read more...
+                    </button>
 
 
                   </div>
@@ -55,9 +68,19 @@ export default function Business() {
               })
           }
         </div>
+        {
+          readMore &&
+          <Display setReadMore={setReadMore} readMore={readMore} displayData={displayData} />
+        }
+
+
 
       </div>
       :
+
       <h1 className=" text-center font-header my-[9rem] text-[2rem]">Loading...</h1>
   );
 }
+
+
+

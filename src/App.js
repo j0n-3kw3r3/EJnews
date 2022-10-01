@@ -20,7 +20,7 @@ import { Footer } from "./Footer";
 
 
 
-const key = 'pub_117291d3a603910ccf6f2f2e86ea96214e17e'
+const key = 'pub_1164815d738c9f7b5072ea44c39601c16bbce'
 const url = `https://newsdata.io/api/1/news?apikey=${key}&language=en&category=business,politics,sports,technology,top`;
 function App() {
   const [data, setData] = useState('');

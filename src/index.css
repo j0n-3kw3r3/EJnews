@@ -19,3 +19,15 @@ body {
 .header{
   font-family: header;
 }
+
+.background{
+  margin: 0;
+  background-image: url('../public/background-.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+.scrollbar ::-webkit-scrollbar{
+    display: none;
+}
